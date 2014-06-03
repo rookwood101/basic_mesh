@@ -15,6 +15,12 @@ namespace mesh {
 	Vertex::Vertex(Point property) {
 		properties.push_back(property);
 	}
+	Vertex::Vertex(GLfloat x, GLfloat y) {
+		properties.push_back(Point(x, y));
+	}
+	Vertex::Vertex(GLfloat x, GLfloat y, GLfloat z) {
+		properties.push_back(Point(x, y, z));
+	}
 	
 	Point& Vertex::operator[] (const vector<Point>::size_type index) {
 		return properties[index];

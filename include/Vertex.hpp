@@ -14,6 +14,8 @@ namespace mesh {
 	public:
 		Vertex(std::vector<Point> properties);
 		Vertex(Point property);
+		Vertex(GLfloat x, GLfloat y);
+		Vertex(GLfloat x, GLfloat y, GLfloat z);
 
 		typedef std::vector<Point>::size_type size_type;
 		typedef std::vector<Point>::iterator iterator;
