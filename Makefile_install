@@ -1,4 +1,4 @@
 install:
-	mkdir /usr/i686-w64-mingw32/include/basic_mesh
+	mkdir -p /usr/i686-w64-mingw32/include/basic_mesh
 	cp include/*.hpp /usr/i686-w64-mingw32/include/basic_mesh/
 	cp *.a /usr/i686-w64-mingw32/lib/
