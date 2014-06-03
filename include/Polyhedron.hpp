@@ -27,7 +27,7 @@ namespace mesh {
 
 		std::vector<Polygon>::size_type faceCount();
 		void addFace(const Polygon& value);
-		std::map< int, std::vector<GLfloat> > GLArrays();
+		std::vector< std::vector<GLfloat> > GLArrays();
 	private:
 		std::vector<Polygon> faces;
 	};

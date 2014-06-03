@@ -44,12 +44,10 @@ namespace mesh {
 	void Vertex::addProperty(const Point& property) {
 		push_back(property);
 	}
-	map< int, vector<GLfloat> > Vertex::GLArrays() {
-		map< int, vector<GLfloat> > gl_arrays;
-		size_type i = 0;
+	vector< vector<GLfloat> > Vertex::GLArrays() {
+		vector< vector<GLfloat> > gl_arrays;
 		for(auto property : properties) {
-			gl_arrays[i] = property.GLArray();
-			++i;
+			gl_arrays.push_back(property.GLArray());
 		}
 		return gl_arrays;
 	}

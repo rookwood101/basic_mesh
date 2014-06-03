@@ -29,7 +29,7 @@ namespace mesh {
 
 		std::vector<Point>::size_type propertiesCount();
 		void addProperty(const Point& property);
-		std::map< int, std::vector<GLfloat> > GLArrays();
+		std::vector< std::vector<GLfloat> > GLArrays();
 	private:
 		std::vector<Point> properties;
 	};

@@ -28,7 +28,7 @@ namespace mesh {
 
 		std::vector<Vertex>::size_type vertexCount();
 		void addVertex(const Vertex& value);
-		std::map< int, std::vector<GLfloat> > GLArrays();
+		std::vector< std::vector<GLfloat> > GLArrays();
 	private:
 		std::vector<Vertex> vertices;
 	};
