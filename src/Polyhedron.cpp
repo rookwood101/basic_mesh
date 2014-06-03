@@ -50,7 +50,7 @@ namespace mesh {
 		vector< vector<GLfloat> > gl_arrays;
 		for(auto face : faces) {
 			vector< vector<GLfloat> > face_gl_arrays = face.GLArrays();
-			for(size_type i=0; i<face.propertiesCount(); ++i) {
+			for(size_type i=0; i<face.vertexCount(); ++i) {
 				if(gl_arrays.size() <= i) {
 					gl_arrays.push_back(vector<GLfloat>());
 				}
