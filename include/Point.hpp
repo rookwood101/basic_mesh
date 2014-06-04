@@ -8,6 +8,7 @@
 namespace mesh {
 	class Point {
 	public:
+		Point();
 		Point(GLfloat x, GLfloat y);
 		Point(GLfloat x, GLfloat y, GLfloat z);
 		Point(GLfloat x, GLfloat y, GLfloat z, GLfloat w);

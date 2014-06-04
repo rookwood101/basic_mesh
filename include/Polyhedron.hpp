@@ -11,6 +11,7 @@
 namespace mesh {
 	class Polyhedron {
 	public:
+		Polyhedron();
 		Polyhedron(std::vector<Polygon> faces);
 
 		typedef std::vector<Polygon>::size_type size_type;
@@ -27,7 +28,7 @@ namespace mesh {
 
 		std::vector<Polygon>::size_type faceCount();
 		void addFace(const Polygon& value);
-		std::vector< std::vector<GLfloat> > GLArrays();
+		std::map< std::string, std::vector<GLfloat> > GLArrays();
 	private:
 		std::vector<Polygon> faces;
 	};

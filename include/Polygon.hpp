@@ -11,6 +11,7 @@
 namespace mesh {
 	class Polygon {
 	public:
+		Polygon();
 		Polygon(std::vector<Vertex> vertices);
 		Polygon(Vertex vertex_1, Vertex vertex_2, Vertex vertex_3);
 
@@ -28,7 +29,7 @@ namespace mesh {
 
 		std::vector<Vertex>::size_type vertexCount();
 		void addVertex(const Vertex& value);
-		std::vector< std::vector<GLfloat> > GLArrays();
+		std::map< std::string, std::vector<GLfloat> > GLArrays();
 	private:
 		std::vector<Vertex> vertices;
 	};

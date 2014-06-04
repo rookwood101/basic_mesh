@@ -46,15 +46,12 @@ namespace mesh {
 	vector<Polygon>::size_type Polyhedron::faceCount() {
 		return size();
 	}
-	vector< vector<GLfloat> > Polyhedron::GLArrays() {
-		vector< vector<GLfloat> > gl_arrays;
-		for(auto face : faces) {
-			vector< vector<GLfloat> > face_gl_arrays = face.GLArrays();
-			for(size_type i=0; i<face.vertexCount(); ++i) {
-				if(gl_arrays.size() <= i) {
-					gl_arrays.push_back(vector<GLfloat>());
-				}
-				copy(face_gl_arrays[i].begin(), face_gl_arrays[i].end(), back_inserter(gl_arrays[i]));
+	map< string, vector<GLfloat> > Polyhedron::GLArrays() {
+		map< string, vector<GLfloat> > gl_arrays;
+		for(auto face: faces) {
+			map< string, vector<GLfloat> > face_gl_arrays = face.GLArrays();
+			for(auto face_gl_array : face_gl_arrays) {
+				copy(face_gl_array.second.begin(), face_gl_array.second.end(), back_inserter(gl_arrays[face_gl_array.first]));
 			}
 		}
 

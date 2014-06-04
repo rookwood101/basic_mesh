@@ -50,15 +50,12 @@ namespace mesh {
 	void Polygon::addVertex(const Vertex& value) {
 		push_back(value);
 	}
-	vector< vector<GLfloat> > Polygon::GLArrays() {
-		vector< vector<GLfloat> > gl_arrays;
+	map< string, vector<GLfloat> > Polygon::GLArrays() {
+		map< string, vector<GLfloat> > gl_arrays;
 		for(auto vertex : vertices) {
-			vector< vector<GLfloat> > vertex_gl_arrays = vertex.GLArrays();
-			for(size_type i=0; i<vertex.propertiesCount(); ++i) {
-				if(gl_arrays.size() <= i) {
-					gl_arrays.push_back(vector<GLfloat>());
-				}
-				copy(vertex_gl_arrays[i].begin(), vertex_gl_arrays[i].end(), back_inserter(gl_arrays[i]));
+			map< string, vector<GLfloat> > vertex_gl_arrays = vertex.GLArrays();
+			for(auto vertex_gl_array : vertex_gl_arrays) {
+				copy(vertex_gl_array.second.begin(), vertex_gl_array.second.end(), back_inserter(gl_arrays[vertex_gl_array.first]));
 			}
 		}
 

@@ -12,28 +12,27 @@
 namespace mesh {
 	class Vertex {
 	public:
-		Vertex(std::vector<Point> properties);
-		Vertex(Point property);
-		Vertex(GLfloat x, GLfloat y);
-		Vertex(GLfloat x, GLfloat y, GLfloat z);
+		Vertex();
+		Vertex(std::map<std::string, Point> properties);
+		Vertex(std::string property_name, Point property);
 
-		typedef std::vector<Point>::size_type size_type;
-		typedef std::vector<Point>::iterator iterator;
-		typedef std::vector<Point>::reverse_iterator reverse_iterator;
+		typedef std::map<std::string, Point>::size_type size_type;
+		typedef std::map<std::string, Point>::iterator iterator;
+		typedef std::map<std::string, Point>::reverse_iterator reverse_iterator;
 		
-		Point& operator[] (const std::vector<Point>::size_type index);
-		std::vector<Point>::iterator begin();
-		std::vector<Point>::iterator end();
-		std::vector<Point>::reverse_iterator rbegin();
-		std::vector<Point>::reverse_iterator rend();
-		std::vector<Point>::size_type size();
-		void push_back(const Point& value);
+		Point& operator[] (const std::string index);
+		std::map<std::string, Point>::iterator begin();
+		std::map<std::string, Point>::iterator end();
+		std::map<std::string, Point>::reverse_iterator rbegin();
+		std::map<std::string, Point>::reverse_iterator rend();
+		std::map<std::string, Point>::size_type size();
+		void push_back(const std::string& property_name, const Point& value);
 
-		std::vector<Point>::size_type propertiesCount();
-		void addProperty(const Point& property);
-		std::vector< std::vector<GLfloat> > GLArrays();
+		std::map<std::string, Point>::size_type propertiesCount();
+		void addProperty(const std::string& property_name, const Point& property);
+		std::map< std::string, std::vector<GLfloat> > GLArrays();
 	private:
-		std::vector<Point> properties;
+		std::map<std::string, Point> properties;
 	};
 }
 
